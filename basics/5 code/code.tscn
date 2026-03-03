@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cly2l5rihi3mb"]
+
+[ext_resource type="Shader" uid="uid://c620xoe8ua4si" path="res://basics/5 code/code.gdshader" id="1_l5ky7"]
+[ext_resource type="Texture2D" uid="uid://dg3w066wtt42k" path="res://icon.svg" id="1_pjkl2"]
+
+[sub_resource type="Gradient" id="Gradient_l5ky7"]
+colors = PackedColorArray(0.6400949, 0.23512986, 0.7025249, 1, 0.92214715, 0.75902146, 0.51875895, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_63od0"]
+gradient = SubResource("Gradient_l5ky7")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63od0"]
+shader = ExtResource("1_l5ky7")
+shader_parameter/distance_eraser = Vector2(-0.39, -0.415)
+shader_parameter/test_texture = SubResource("GradientTexture2D_63od0")
+
+[node name="Code" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_63od0")
+texture = ExtResource("1_pjkl2")
+
+[node name="Camera2D" type="Camera2D" parent="Icon"]
+zoom = Vector2(3, 3)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4gehg0aan5rg"]
+
+[ext_resource type="Script" uid="uid://bkurpidv7rcrw" path="res://basics/4 variables/variables.gd" id="1_pwun2"]
+[ext_resource type="Shader" uid="uid://vissr1j4hwgg" path="res://basics/4 variables/variables.tres" id="2_3bkrx"]
+[ext_resource type="Texture2D" uid="uid://dg3w066wtt42k" path="res://icon.svg" id="3_xgegs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v61ch"]
+shader = ExtResource("2_3bkrx")
+shader_parameter/Movement = Vector2(0, 0)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pwun2")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_v61ch")
+texture = ExtResource("3_xgegs")
+
+[node name="Camera2D" type="Camera2D" parent="Icon"]
