@@ -9,6 +9,9 @@ shader_parameter/center_size = 0.370000017575
 shader_parameter/circle_width = 0.0390000018525
 shader_parameter/circle_distance = 0.350000016625
 shader_parameter/bar_cutout = 0.1630000077425
+shader_parameter/crosshair_distance = 0.30000000447036
+shader_parameter/crosshair_length = 0.12999999709424
+shader_parameter/crosshair_thickness = 0.07999999821184
 
 [node name="Crosshair" type="Node2D"]
 
