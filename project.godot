@@ -14,3 +14,7 @@ config/name="shader test"
 run/main_scene="res://basics/1 fragment/fragment.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

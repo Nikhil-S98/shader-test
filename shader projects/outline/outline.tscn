@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://clqr8bw7f0yrb"]
+
+[ext_resource type="Shader" uid="uid://dev53esayswef" path="res://shader projects/outline/outline.gdshader" id="1_4eiac"]
+[ext_resource type="Texture2D" uid="uid://paj3rryuckpt" path="res://shader projects/outline/bird.png" id="1_x1fy5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7lid"]
+shader = ExtResource("1_4eiac")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.30000000447036
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eiac"]
+atlas = ExtResource("1_x1fy5")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7lid"]
+atlas = ExtResource("1_x1fy5")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vmlm"]
+atlas = ExtResource("1_x1fy5")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbw5d"]
+atlas = ExtResource("1_x1fy5")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbpdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eiac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7lid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vmlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbw5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Outline" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_l7lid")
+sprite_frames = SubResource("SpriteFrames_lbpdf")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+zoom = Vector2(3, 3)
