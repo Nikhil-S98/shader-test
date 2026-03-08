@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1y8rtnbj67dg"]
+
+[ext_resource type="Shader" uid="uid://bjle65jcmiylk" path="res://trig/waves/waves.gdshader" id="1_l6l7o"]
+[ext_resource type="Texture2D" uid="uid://dg3w066wtt42k" path="res://icon.svg" id="2_c37wo"]
+
+[sub_resource type="Curve" id="Curve_l6l7o"]
+_data = [Vector2(0.010695182, 0), 0.0, 0.0, 0, 0, Vector2(0.2513369, 0.46067423), 1.9143573, 1.2332683, 1, 1, Vector2(0.4973262, 0.764045), -0.0552927, -0.0552927, 0, 0, Vector2(0.7433155, 0.516854), -1.0048851, -2.013577, 1, 1, Vector2(1, 0), -3.2134824, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_c37wo"]
+curve = SubResource("Curve_l6l7o")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pilnj"]
+shader = ExtResource("1_l6l7o")
+shader_parameter/scale_curve = SubResource("CurveTexture_c37wo")
+
+[node name="Waves" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pilnj")
+texture = ExtResource("2_c37wo")
+
+[node name="Camera2D" type="Camera2D" parent="Icon"]

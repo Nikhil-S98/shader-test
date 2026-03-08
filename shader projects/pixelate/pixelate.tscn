@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://g1qq7bj6t8n5"]
+
+[ext_resource type="Shader" uid="uid://cksr8bdl2clni" path="res://shader projects/pixelate/pixelate.gdshader" id="1_rph34"]
+[ext_resource type="Texture2D" uid="uid://dg3w066wtt42k" path="res://icon.svg" id="2_4dny3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x0q5o"]
+shader = ExtResource("1_rph34")
+shader_parameter/pixel_size = 5
+
+[node name="Pixelate" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_x0q5o")
+texture = ExtResource("2_4dny3")
